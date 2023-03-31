@@ -1,0 +1,14 @@
+{
+  "name": "qa-supply",
+  "version": "1.0.0",
+  "description": "Testes QA estágio supply",
+  "main": "index.js",
+  "scripts": {
+    "open:cy": "npx cypress open"
+  },
+  "author": "David Cavalcanti",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.9.0"
+  }
+}
