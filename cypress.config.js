@@ -7,5 +7,6 @@ module.exports = defineConfig({
     },
     baseUrl: "https://www.saucedemo.com/",
     chromeWebSecurity: false,
+    experimentalRunAllSpecs: true,    
   },
 });
