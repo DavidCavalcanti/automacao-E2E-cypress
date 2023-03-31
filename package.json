@@ -4,7 +4,8 @@
   "description": "Testes QA estágio supply",
   "main": "index.js",
   "scripts": {
-    "open:cy": "npx cypress open"
+    "open:cy": "npx cypress open",
+    "run:cy": "npx cypress run"
   },
   "author": "David Cavalcanti",
   "license": "ISC",
