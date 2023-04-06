@@ -2,13 +2,13 @@
 
 describe('Buy item', () => {
     beforeEach(() => {
-        cy.login()
+        cy.loginSwag()
     })
 
     it('Buyt item successfully', () => {
         cy.fixture('items').then((item) => {
             cy.buyProduct(item.Bike)
         })
-        cy.logout()
+        cy.logoutSwag()
     })
 })

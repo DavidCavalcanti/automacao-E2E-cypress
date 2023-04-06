@@ -16,7 +16,7 @@ Cypress.Commands.add('loginSessionAlura', (
     })
 })
 
-Cypress.Commands.add('login', (
+Cypress.Commands.add('loginSwag', (
     username = Cypress.env('standard_user'),
     password = Cypress.env('password')
 ) => {
@@ -27,7 +27,7 @@ Cypress.Commands.add('login', (
     cy.get(locator.LOGIN.BUTTON_LOGIN).click()
 })
 
-Cypress.Commands.add('logout', () => {
+Cypress.Commands.add('logoutSwag', () => {
     cy.get(locator.HEADER.MENU.BUTTON_MENU).click()
     cy.get(locator.HEADER.MENU.LOGOUT).click()
     cy.validateUrl(`${Cypress.config('baseUrl')}`)
