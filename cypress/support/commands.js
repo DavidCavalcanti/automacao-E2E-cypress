@@ -1,5 +1,21 @@
 import { locators as locator } from "./locators";
 
+Cypress.Commands.add('loginSessionAlura', (
+    username = 'flavio',
+    password = '123'
+) => {
+    cy.session([username, password], () => {
+        cy.intercept('POST', 'https://apialurapic.herokuapp.com/user/login').as('tokenAcess')
+        cy.visit('https://alura-fotos.herokuapp.com/')
+
+        cy.get(':nth-child(1) > .form-control').type(username)
+        cy.get(':nth-child(2) > .form-control').type(password)
+        cy.get('.btn').click()
+
+        cy.wait('@tokenAcess');
+    })
+})
+
 Cypress.Commands.add('login', (
     username = Cypress.env('standard_user'),
     password = Cypress.env('password')
