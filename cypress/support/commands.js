@@ -22,8 +22,8 @@ Cypress.Commands.add('loginSwag', (
 ) => {
     cy.visit('/')
 
-    cy.get(locator.LOGIN.USER).type(username)
-    cy.get(locator.LOGIN.PASSWORD).type(password)
+    cy.get(locator.LOGIN.USER).type(username, { log: false })
+    cy.get(locator.LOGIN.PASSWORD).type(password, { log: false })
     cy.get(locator.LOGIN.BUTTON_LOGIN).click()
 })
 
