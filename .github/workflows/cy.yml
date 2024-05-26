@@ -1,10 +1,36 @@
 name: End-to-end tests
+
 on: push
+
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v4      
-      - name: npx cypress run --spec cypress/e2e/sequenced-tests.cy.js
-        uses: cypress-io/github-action@v6
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress tests
+        run: npx cypress run --spec cypress/e2e/sequenced-tests.cy.js
+
+      - name: Archive test results
+        if: always() 
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
+      - name: Archive test videos
+        if: always() 
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-videos
+          path: cypress/videos
