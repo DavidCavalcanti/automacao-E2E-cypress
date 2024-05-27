@@ -1,6 +1,6 @@
 export const locators = {
     LOGIN: {
-        USER: '[data-test="username"]',
+        USER: '[data-test="usernam"]',
         PASSWORD: '[data-test="password"]',
         BUTTON_LOGIN: '[data-test="login-button"]',
         MESSAGE_ERROR: '[data-test="error"]'
